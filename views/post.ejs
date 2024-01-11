@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 >QUIZ APPLICATION</h1>
+
+        <nav class="nav">
+            <a href="/" style="color: black; text-decoration: none;">HOME </a> 
+            <a href="/post-question" style="color: black; text-decoration: none;">POST </a> 
+            <a href="/solve-question" style="color: black; text-decoration: none;">SOLVE</a>
+        </nav>
+    </header>
+
+    <h1 class="heading">POST QUIZ QUESTIONS</h1>
+
+    <div id="questions-div">
+        <form action="/post-question" method="post">
+
+            <label for="questionAndAnswers" name="questionAndAnswers" id="all-questions">
+                <label for="question1" class="question-box">Question 1
+                    <br> <input type="text" style="height: 30px;" name="head1" required>
+                </label><br> <br>
+
+                <!-- <p> Kindly fill 3 wrong answers & 1 correct answer</p> -->
+
+                <label for="Option1A"> Option A </label>
+                <input type="text" name="body1A" required>
+
+                <br>
+
+                <label for="Option1B">Option B </label>
+                <input type="text" name="body1B" required>
+
+                <br>
+
+                <label for="Option1C"> Option C</label>
+                <input type="text" name="body1C" required>
+
+                <br>
+
+                <label for="Option1D">Option D</label>
+                <input type="text" name="body1D" required>
+
+                <br>
+
+                <label for="Answer1">Choose correct answer
+                    <select name="ans1" id="question1" class="options">
+                        <option value="1A">OptionA</option>
+                        <option value="1B">OptionB</option>
+                        <option value="1C">OptionC</option>
+                        <option value="1D">OptionD</option>
+                    </select>
+                </label>
+
+                <br><br>
+
+                <label for="question2" class="question-box">Question 2
+                    <br> <input type="text" style="height: 30px;" name="head2" required>
+                </label><br> <br>
+
+                <!-- <p> Kindly fill 3 wrong answers & 1 correct answer</p> -->
+
+                <label for="Option2A"> Option A </label>
+                <input type="text" name="body2A" required>
+
+                <br>
+
+                <label for="Option2B">Option B </label>
+                <input type="text" name="body2B" required>
+
+                <br>
+
+                <label for="Option2C"> Option C</label>
+                <input type="text" name="body2C" required>
+
+                <br>
+
+                <label for="Option2D">Option D</label>
+                <input type="text" name="body2D" required>
+
+                <br>
+
+                <label for="Answer2" >Choose correct answer
+                    <select name="ans2" id="question2" class="options">
+                        <option value="2A">OptionA</option>
+                        <option value="2B">OptionB</option>
+                        <option value="2C">OptionC</option>
+                        <option value="2D">OptionD</option>
+                    </select>
+                </label>
+                <br><br>
+                <label for="question3" class="question-box">Question 3
+                    <br> <input type="text" style="height: 30px;" name="head3" required>
+                </label><br> <br>
+
+                <!-- <p> Kindly fill 3 wrong answers & 1 correct answer</p> -->
+
+                <label for="Option3A"> Option A </label>
+                <input type="text" name="body3A" required>
+
+                <br>
+
+                <label for="Option3B">Option B </label>
+                <input type="text" name="body3B" required>
+
+                <br>
+
+                <label for="Option3C"> Option C</label>
+                <input type="text" name="body3C" required>
+
+                <br>
+
+                <label for="Option3D">Option D</label>
+                <input type="text" name="body3D" required>
+
+                <br>
+
+                <label for="Answer3" >Choose correct answer
+                    <select name="ans3" id="question3" class="options">
+                        <option value="3A">OptionA</option>
+                        <option value="3B">OptionB</option>
+                        <option value="3C">OptionC</option>
+                        <option value="3D">OptionD</option>
+                    </select>
+                </label>
+                <br><br>
+                <label for="question 4" class="question-box">Question 4
+                    <br> <input type="text" style="height: 30px;" name="head4" required>
+                </label><br> <br>
+
+                <!-- <p> Kindly fill 3 wrong answers & 1 correct answer</p> -->
+
+                <label for="Option4A"> Option A </label>
+                <input type="text" name="body4A" required>
+
+                <br>
+
+                <label for="Option4B">Option B </label>
+                <input type="text" name="body4B" required>
+
+                <br>
+
+                <label for="Option4C"> Option C</label>
+                <input type="text" name="body4C" required>
+
+                <br>
+
+                <label for="Option4D">Option D</label>
+                <input type="text" name="body4D" required>
+
+                <br>
+
+                <label for="Answer4">Choose correct answer
+                    <select name="ans4" id="question4" class="options">
+                        <option value="4A">OptionA</option>
+                        <option value="4B">OptionB</option>
+                        <option value="4C">OptionC</option>
+                        <option value="4D">OptionD</option>
+                    </select>
+                </label>
+                <br><br>
+                <label for="question5" class="question-box">Question 5
+                    <br> <input type="text" style=" height: 30px;" name="head5" required>
+                </label><br> <br>
+
+                <!-- <p> Kindly fill 3 wrong answers & 1 correct answer</p> -->
+
+                <label for="Option5A"> Option A </label>
+                <input type="text" name="body5A" required>
+
+                <br>
+
+                <label for="Option5B">Option B </label>
+                <input type="text" name="body5B" required>
+
+                <br>
+
+                <label for="Option5C"> Option C</label>
+                <input type="text" name="body5C" required>
+
+                <br>
+
+                <label for="Option5D">Option D</label>
+                <input type="text" name="body5D" required>
+
+                <br>
+
+                <label for="Answer5" class="options" >Choose correct answer
+                    <select name="ans5" id="question5" class="option">
+                        <option value="5A">OptionA</option>
+                        <option value="5B">OptionB</option>
+                        <option value="5C">OptionC</option>
+                        <option value="5D">OptionD</option>
+                    </select>
+                </label>
+                <br><br>
+            </label>
+
+
+
+
+            <button class="submit">Post Questions</button>
+
+
+        </form>
+    </div>
+
+    <!-- <script>
+        function getAnswers() {
+            if(window.getSelection) {
+                answer = window.getSelection();
+            }else{
+                console.log(error);
+            }
+            return answer;
+        }
+    </script> -->
+</body>
+
+</html>

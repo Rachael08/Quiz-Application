@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/css/solve.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="head">QUIZ APPLICATION</h1>
+
+        <nav class="nav">
+            <a href="/" style="color: black; text-decoration: none;">HOME </a> 
+            <a href="/post-question" style="color: black; text-decoration: none;">POST </a> 
+            <a href="/solve-question" style="color: black; text-decoration: none;">SOLVE</a>
+        </nav>
+    </header>
+    <section>
+        <h1 class="heading">
+            SOLVE QUIZ QUESTIONS
+        </h1>
+        <p>
+            All the best!!
+        </p>
+
+        <form action="/submit-quiz" id="display-question" method="POST">
+            <% posts.forEach(post=> {%>
+                <div class="total-questions">
+                    <h3>
+                        <%=post.question1%>
+                    </h3> 
+                    <label for="selectedOpt1">
+                        
+                        <input type="radio" name="opt1" value="1A"  > <%=post.Option1A%>
+                
+                        <input type="radio" name="opt1" value="1B"  > <%=post.Option1B%>
+               
+                        <input type="radio" name="opt1" value="1B"  > <%=post.Option1C%>
+                
+                        <input type="radio" name="opt1" value="1B"  > <%=post.Option1D%>
+                        
+                    </label>
+                
+                    <h3>
+                     <%=post.question2%>
+                    </h3> <br>
+                    <label for="selectedOpt2">
+                        <input type="radio" name="opt2" value="2A"> <%=post.Option2A%>
+                
+                        <input type="radio" name="opt2" value="2B"> <%=post.Option2B%>
+               
+                        <input type="radio" name="opt2" value="2C"> <%=post.Option2C%>
+                
+                        <input type="radio" name="opt2" value="2D"> <%=post.Option2D%>
+                    </label>
+                    <h3>
+                        <%=post.question3%>
+                    </h3> <br>
+                    <label for="selectedOpt3">
+                        <input type="radio" name="opt3" value="3A"> <%=post.Option3A%>
+                
+                        <input type="radio" name="opt3" value="3B"> <%=post.Option3B%>
+               
+                        <input type="radio" name="opt3" value="3C"> <%=post.Option3C%>
+                
+                        <input type="radio" name="opt3" value="3D"> <%=post.Option3D%>
+                    </label>
+                    <h3>
+                        <%=post.question4%>
+                    </h3> <br>
+                    <label for="selectedOpt4">
+                        <input type="radio" name="opt4" value="4A"> <%=post.Option4A%>
+                
+                        <input type="radio" name="opt4" value="4B"> <%=post.Option4B%>
+               
+                        <input type="radio" name="opt4" value="4C"> <%=post.Option4C%>
+                
+                        <input type="radio" name="opt4" value="4D"> <%=post.Option4D%>
+                    </label>
+                    <h3>
+                        <%=post.question5%>
+                    </h3> <br>
+                    <label for="selectedOpt5">
+                        <input type="radio" name="opt5" value="5A"> <%=post.Option5A%>
+                
+                        <input type="radio" name="opt5" value="5B"> <%=post.Option5B%>
+               
+                        <input type="radio" name="opt5" value="5C"> <%=post.Option5C%>
+                
+                        <input type="radio" name="opt5" value="5D"> <%=post.Option5D%>
+                    </label>
+                
+                </div>
+
+            <%})%>
+
+            <button id="submit-btn">SUBMIT QUIZ</button>
+        </form>
+
+    </section>
+    
+
+
+
+   
+    <script>
+        const form = document.getElementById('display-question');
+        function submitQuiz() {
+            let userAnswer = {};
+
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+            radioButtons.forEach(eachbtn => {
+                userAnswer[radioButtons.name] = radioButtons.value;
+            });
+
+            return userAnswer;
+        };
+
+        form.addEventListener("submit", async() => {
+            let userResult = await submitQuiz();
+            console.log(userResult);
+            let res = await fetch("/submit-quiz", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(result)
+            });
+        });n
+    </script>
+</body>
+
+</html>
