@@ -131,14 +131,16 @@ app.post('/submit-quiz', async (req, res) => {
         //     }
         // };
 
-        let score = 0;
+        let count = 0;
         for (let i = 0; i < newAns.length; i++) {
             if (newAns[i] == oldAns[i]) {
-                score++
+                count++
             }
         };
 
-        res.status(200).redirect('/quiz-result', { title: "Quiz Result", });
+        const score = count;
+
+        res.status(200).redirect('/quiz-result').render({score});
 
     } catch (error) {
         console.log(error.message);
@@ -154,7 +156,7 @@ app.post('/submit-quiz', async (req, res) => {
 
 app.get('/quiz-result', async (req, res) => {
     try {
-        res.status(200).render('results')
+        res.status(200).render('results', {title: "Quiz Result"})
     } catch (error) {
         console.log(error.message);
     }

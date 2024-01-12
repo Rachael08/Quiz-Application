@@ -6,13 +6,19 @@
     <title><%=title%></title>
 </head>
 <body>
-    <div class="container">
-        <h1>Quiz App</h1>
-        <div id="quiz"></div>
-        <div id="result" class="result"></div>
-        <button id="submit" class="button">Submit</button>
-        <button id="retry" class="button hide">Retry</button>
-        <button id="showAnswer" class="button hide">Show Answer</button>
-      </div>
+    <header class="header">
+        <h1 >QUIZ APPLICATION</h1>
+
+        <nav class="nav">
+            <a href="/" style="color: black; text-decoration: none;">HOME </a> 
+            <a href="/post-question" style="color: black; text-decoration: none;">POST </a> 
+            <a href="/solve-question" style="color: black; text-decoration: none;">SOLVE</a>
+        </nav>
+    </header>
+
+    <h1 class="heading">QUIZ RESULT</h1>
+
+    <h4>Well-Done!!, Keep It Up.</h4>
+    <p>Your Score: <span class="score"><%=score%></span></p>
 </body>
 </html>
