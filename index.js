@@ -47,7 +47,7 @@ app.get('/solve-question', async (req, res) => {
 app.post('/post-question', async (req, res) => {
     try {
         const { head1, body1A, body1B, body1C, body1D, ans1, head2, body2A, body2B, body2C, body2D, ans2, head3, body3A, body3B, body3C, body3D, ans3, head4, body4A, body4B, body4C, body4D, ans4, head5, body5A, body5B, body5C, body5D, ans5, } = req.body
-        console.log(req.body);
+        // console.log(req.body);
         const newPost = new postModel({
             question1: head1,
             Option1A: body1A,
@@ -94,7 +94,7 @@ app.post('/post-question', async (req, res) => {
     };
 });
 
-app.post('/submit-quiz', async (req, res) => {
+app.get('/submit-quiz', async (req, res) => {
     try {
         const { opt1, opt2, opt3, opt4, opt5, ans1, ans2, ans3, ans4, ans5 } = req.body;
         const userAnswer = new userAnswerModel({
@@ -105,7 +105,7 @@ app.post('/submit-quiz', async (req, res) => {
             selectedOpt5: opt5,
         });
         const savedUserAnswer = await userAnswer.save();
-        // console.log(savedAnswer);
+        // console.log(savedUserAnswer);
 
         const correctAnswer = new postModel({
             Answer1: ans1,
@@ -116,6 +116,18 @@ app.post('/submit-quiz', async (req, res) => {
         });
 
         const savedCorrectAnswer = await correctAnswer.save();
+        // console.log(savedCorrectAnswer);
+
+
+        
+        let count = 0;
+        for (let i = 0; i < savedUserAnswer.length; i++) {
+            if (savedUserAnswer[i] == savedCorrectAnswer[i]) {
+                count++
+            }
+        };
+
+        // const score = count;
 
         // const data = req.body;
         const newAns = savedUserAnswer;
@@ -131,14 +143,8 @@ app.post('/submit-quiz', async (req, res) => {
         //     }
         // };
 
-        let count = 0;
-        for (let i = 0; i < newAns.length; i++) {
-            if (newAns[i] == oldAns[i]) {
-                count++
-            }
-        };
 
-        const score = count;
+        
 
         res.status(200).redirect('/quiz-result').render({score});
 
@@ -156,6 +162,7 @@ app.post('/submit-quiz', async (req, res) => {
 
 app.get('/quiz-result', async (req, res) => {
     try {
+
         res.status(200).render('results', {title: "Quiz Result"})
     } catch (error) {
         console.log(error.message);

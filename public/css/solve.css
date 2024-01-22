@@ -35,6 +35,15 @@ button:hover {
 }
 
 @media(min-width: 768px) {
+    section{
+        text-align: center;
+        margin: 3rem;
+
+
+    }
+    section h1{
+        font-size: 40px;
+    }
     .nav{
         display: flex;
         flex-direction: row;
@@ -45,5 +54,13 @@ button:hover {
     label{
         gap: 1000px;
     }
+    button {
+        margin-right:300px;
+        width: 150px;
+       }
+       h3{
+        text-align: center;
+       font-size: 25px;
+       }
 
 }
